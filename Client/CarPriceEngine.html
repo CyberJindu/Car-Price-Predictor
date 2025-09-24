@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Price Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Car Price Simulator</h1>
+    <form id="predict-form">
+      <div class="form-row">
+        <label for="Make">Make:</label>
+        <select id="Make" name="Make" required>
+          <option value="">Select Make</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="Model">Model:</label>
+        <select id="Model" name="Model" required>
+          <option value="">Select Model</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="Condition">Condition:</label>
+        <select id="Condition" name="Condition" required>
+          <option value="">Select Condition</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="Age">Age (years):</label>
+        <input type="number" id="Age" name="Age" min="0" max="50" required>
+      </div>
+
+      <div class="form-row">
+        <label for="EngineSize">Engine Size (L):</label>
+        <input type="number" step="0.1" id="EngineSize" name="EngineSize" min="0.5" max="8.0" required>
+      </div>
+
+      <div class="form-row">
+        <label for="HorsePower">Horse Power:</label>
+        <input type="number" id="HorsePower" name="HorsePower" min="50" max="1000" required>
+      </div>
+
+      <button type="submit">Predict Price</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
