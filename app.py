@@ -143,12 +143,12 @@ if columns:
 # Serve frontend files
 @app.route("/")
 def serve_frontend():
-    return send_from_directory(os.path.join("Client", "CarPriceEngine.html"))
+    return send_from_directory("Client", "CarPriceEngine.html")
 
 
 @app.route("/<path:path>")
 def serve_static_files(path):
-    return send_from_directory(os.path.join(BASE_DIR, "..", "client"), path)
+    return send_from_directory(os.path.join(BASE_DIR, "..", "Client"), path)
 
 
 # API endpoints
