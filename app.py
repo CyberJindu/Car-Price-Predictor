@@ -143,12 +143,12 @@ if columns:
 # Serve frontend files
 @app.route("/")
 def serve_frontend():
-    return send_from_directory("Client", "CarPriceEngine.html")
-
+    return send_from_directory(os.path.join(BASE_DIR, "Client"), "CarPriceEngine.html")
 
 @app.route("/<path:path>")
 def serve_static_files(path):
-    return send_from_directory(os.path.join(BASE_DIR, "..", "Client"), path)
+    return send_from_directory(os.path.join(BASE_DIR, "Client"), path)
+
 
 
 # API endpoints
@@ -219,4 +219,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
 
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
