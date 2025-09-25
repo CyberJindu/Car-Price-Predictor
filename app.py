@@ -143,7 +143,7 @@ if columns:
 # Serve frontend files
 @app.route("/")
 def serve_frontend():
-    return send_from_directory(os.path.join("Client", "CarPriceEngine.html")
+    return send_from_directory(os.path.join("Client", "CarPriceEngine.html"))
 
 
 @app.route("/<path:path>")
@@ -219,3 +219,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
 
     app.run(host="0.0.0.0", port=port, debug=False)
+
