@@ -14,8 +14,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # For Render deployment - use relative paths
 try:
     # Try Render path structure first
-    MODEL_PATH = os.path.join(BASE_DIR, "..", "model", "Car_prices_model.pickle")
-    COLUMNS_PATH = os.path.join(BASE_DIR, "..", "model", "Car_columns.json")
+    MODEL_PATH = "Model/Car_prices_model.pickle"
+    COLUMNS_PATH = "Model/Car_columns.json"
 
     # If files not found, try alternative paths
     if not os.path.exists(MODEL_PATH):
@@ -143,7 +143,7 @@ if columns:
 # Serve frontend files
 @app.route("/")
 def serve_frontend():
-    return send_from_directory(os.path.join(BASE_DIR, "..", "client"), "CarPriceEngine.html")
+    return send_from_directory(os.path.join("Client", "CarPriceEngine.html")
 
 
 @app.route("/<path:path>")
@@ -217,4 +217,5 @@ def predict():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
+
     app.run(host="0.0.0.0", port=port, debug=False)
